@@ -1,13 +1,17 @@
 const express = require('express')
 const path = require('path')
 
+const morgan = require('morgan')
+
+morgan('dev')
+
 const app = express()
 
 app.get('/', (req, res) => 
     res.send('Hello!'))
 
-app.get('/plain-js', (req, res) => 
-    res.sendFile(path.join(__dirname, '../plain-js/public/index.html')))
+app.use('/plain-js/', express.static(path.join(__dirname, '../plain-js/public/')))
+
 
 app.use((req, res, next) => {
     res.status(404).send("Sorry, can't find that!")

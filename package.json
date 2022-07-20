@@ -6,6 +6,7 @@
   "author": "Josh Derocher <josh@vlkpack.com>",
   "license": "MIT",
   "scripts": {
+    "develop": "yarn dlx nodemon",
     "start": "node server/index.js",
     "build": "yarn install",
     "test": "jest -i",

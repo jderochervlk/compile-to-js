@@ -1,7 +1,4 @@
 const app = require('./app')
-const morgan = require('morgan')
-
-morgan('tiny')
 
 const port = process.env.PORT || 8080
 

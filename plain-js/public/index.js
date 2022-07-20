@@ -1,3 +1,3 @@
 (function(){
-    console.log('working!')
+    console.info('Project is working as expected...')
 })()

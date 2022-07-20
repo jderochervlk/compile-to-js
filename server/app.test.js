@@ -21,6 +21,16 @@ test('get /plain-js', done => {
         })
 })
 
+test('get /plain-js/assets/index.js', done => {
+    request(app)
+        .get('/plain-js/assets/index.js')
+        .then(res => {
+            expect(res.statusCode).toBe(200)
+            expect(res.text).toContain("<p>A basic application written with just good old JavaScript.</p>")
+            done()
+        })
+})
+
 test('404', done => {
     request(app)
         .get('/not-a-page')
