@@ -3,7 +3,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "commonjs",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "strict": true
   }
 }

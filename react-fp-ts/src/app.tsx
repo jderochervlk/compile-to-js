@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import Layout from './components/Layout'
 
-let Greet = () => <h1>Hello, world!</h1>
-
-ReactDom.render(<Greet />, document.getElementById('root'))
+ReactDom.render(<Layout />, document.getElementById('root'))
 
 /***
  *
