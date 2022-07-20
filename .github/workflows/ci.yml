@@ -1,0 +1,13 @@
+name: GitHub Actions Demo
+on: [push]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: prepare yarn
+        run: yarn install
+      - name: unit tests
+        run: yarn test
