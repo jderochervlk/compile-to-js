@@ -1,0 +1,12 @@
+{
+  "name": "compile-to-js",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "repository": "git@github.com:jderochervlk/compile-to-js.git",
+  "author": "Josh Derocher <josh@vlkpack.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "packageManager": "yarn@3.2.1"
+}
