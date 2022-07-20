@@ -2,10 +2,6 @@ import * as TE from 'fp-ts/lib/TaskEither'
 import * as E from 'fp-ts/lib/Either'
 import { flow, pipe } from 'fp-ts/lib/function'
 
-type ApiJson = {
-  body: string[]
-}
-
 export const safeGet = (url: string): TE.TaskEither<Error, Response> =>
   TE.tryCatch(
     () => fetch(url),
@@ -18,16 +14,11 @@ export const verifyResponse = flow(
   TE.fromEither
 )
 
-export const parseJson = (res: Response): TE.TaskEither<Error, ApiJson> =>
+export const parseJson = (res: Response): TE.TaskEither<Error, string[]> =>
   TE.tryCatch(
     () => res.json(),
     reason => Error(String(reason))
   )
 
 export const requestData = (url: string): TE.TaskEither<Error, string[]> =>
-  pipe(
-    safeGet(url),
-    TE.chain(verifyResponse),
-    TE.chain(parseJson),
-    TE.map(res => res.body)
-  )
+  pipe(safeGet(url), TE.chain(verifyResponse), TE.chain(parseJson))

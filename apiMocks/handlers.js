@@ -3,7 +3,7 @@ import { rest } from 'msw'
 export const handlers = [
   // Mocks out the responses for our API server
   rest.get('https://baconipsum.com/*', (req, res, ctx) => {
-    return res(ctx.json({ body: ['one', 'two', 'three'] }))
+    return res(ctx.json(['one', 'two', 'three']))
   }),
 
   rest.get('https://error.com', (req, res, ctx) => {

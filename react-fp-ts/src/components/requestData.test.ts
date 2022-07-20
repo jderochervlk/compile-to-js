@@ -35,7 +35,7 @@ test('verifyResponse handles sucess', done => {
 test('parse json returns a Right if we have good data', done => {
   fetch('https://baconipsum.com').then(res => {
     parseJson(res)().then(json => {
-      expect(json).toEqual(E.right({ body: ['one', 'two', 'three'] }))
+      expect(json).toEqual(E.right(['one', 'two', 'three']))
       done()
     })
   })

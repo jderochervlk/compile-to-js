@@ -4,6 +4,7 @@ const Intro = () => (
     <p className="mt-2">
       A basic application written with React, TypeScript, and fp-ts.
     </p>
+    <br />
   </>
 )
 

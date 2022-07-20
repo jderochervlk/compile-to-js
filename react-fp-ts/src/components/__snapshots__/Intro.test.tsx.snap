@@ -12,5 +12,6 @@ exports[`Intro contains the expected text 1`] = `
   >
     A basic application written with React, TypeScript, and fp-ts.
   </p>
+  <br />
 </div>
 `;
