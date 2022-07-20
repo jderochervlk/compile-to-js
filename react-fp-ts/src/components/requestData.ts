@@ -6,7 +6,7 @@ type ApiJson = {
   body: string[]
 }
 
-const safeGet = (url: string): TE.TaskEither<Error, Response> =>
+export const safeGet = (url: string): TE.TaskEither<Error, Response> =>
   TE.tryCatch(
     () => fetch(url),
     reason => Error(String(reason))
@@ -18,13 +18,11 @@ export const verifyResponse = flow(
   TE.fromEither
 )
 
-export const parseJson = (res: Response): TE.TaskEither<Error, ApiJson> => {
-  console.log(res)
-  return TE.tryCatch(
+export const parseJson = (res: Response): TE.TaskEither<Error, ApiJson> =>
+  TE.tryCatch(
     () => res.json(),
     reason => Error(String(reason))
   )
-}
 
 export const requestData = (url: string): TE.TaskEither<Error, string[]> =>
   pipe(

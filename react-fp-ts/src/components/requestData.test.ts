@@ -1,6 +1,20 @@
-import { parseJson, verifyResponse } from './requestData'
-import 'node-fetch'
+import { parseJson, requestData, safeGet, verifyResponse } from './requestData'
 import * as E from 'fp-ts/lib/Either'
+
+test('safeGet returns a right when the request works', done => {
+  safeGet('https://baconipsum.com')().then(res => {
+    expect(res._tag).toEqual('Right')
+    done()
+  })
+})
+
+test('safeGet returns a left when the request does not work (no server response)', done => {
+  // @ts-expect-error
+  safeGet(undefined)().then(res => {
+    expect(res._tag).toEqual('Left')
+    done()
+  })
+})
 
 test('verifyResponse handles an error', done => {
   verifyResponse(
@@ -18,21 +32,34 @@ test('verifyResponse handles sucess', done => {
   })
 })
 
-test('parse json', done => {
+test('parse json returns a Right if we have good data', done => {
   fetch('https://baconipsum.com').then(res => {
-    console.log(res.json())
-    res
-      .json()
-      .then(x => {
-        console.log(x)
-        return done()
-      })
-      .catch(console.error)
-    // console.log(res)
-    // parseJson(res)()
-    //     .then(r => {
-    //         console.log(r)
-    //         done()
-    //     })
+    parseJson(res)().then(json => {
+      expect(json).toEqual(E.right({ body: ['one', 'two', 'three'] }))
+      done()
+    })
+  })
+})
+
+test('parse json returns a Left if we have bad data', done => {
+  fetch('https://error.com').then(res => {
+    parseJson(res)().then(json => {
+      expect(json).toEqual(E.left(expect.any(Error)))
+      done()
+    })
+  })
+})
+
+test('requestData has returns a Right of the value we want on success', done => {
+  requestData('https://baconipsum.com')().then(res => {
+    expect(res).toEqual(E.right(['one', 'two', 'three']))
+    done()
+  })
+})
+
+test('requestData has returns a Right of the value we want on success', done => {
+  requestData('https://error.com')().then(res => {
+    expect(res).toEqual(E.left(expect.any(Error)))
+    done()
   })
 })

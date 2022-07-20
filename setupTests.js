@@ -1,6 +1,5 @@
-// src/setupTests.js
-
 import { server } from './apiMocks/server.js'
+import 'jest-fetch-mock'
 
 // Establish API mocking before all tests.
 

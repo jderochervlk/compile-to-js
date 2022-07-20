@@ -8,10 +8,7 @@ const useData = () => {
 
   useEffect(() => {
     requestData('https://baconipsum.com/api/?type=meat-and-filler')().then(
-      val => {
-        console.log(val)
-        setData(val)
-      }
+      setData
     )
   }, [])
 
