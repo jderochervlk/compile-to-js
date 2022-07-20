@@ -13,20 +13,19 @@ test('get /', done => {
 
 test('get /plain-js', done => {
     request(app)
-        .get('/plain-js')
+        .get('/plain-js/')
         .then(res => {
-            expect(res.statusCode).toBe(200)
-            expect(res.text).toContain("<p>A basic application written with just good old JavaScript.</p>")
+            expect(res.text).toContain("A basic application written with just good old JavaScript.")
             done()
         })
 })
 
-test('get /plain-js/assets/index.js', done => {
+test('get /plain-js/index.js', done => {
     request(app)
-        .get('/plain-js/assets/index.js')
+        .get('/plain-js/index.js')
         .then(res => {
             expect(res.statusCode).toBe(200)
-            expect(res.text).toContain("<p>A basic application written with just good old JavaScript.</p>")
+            expect(res.text).toContain("Project is working as expected...")
             done()
         })
 })
