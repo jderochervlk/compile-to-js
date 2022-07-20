@@ -1,18 +1,18 @@
-const info = jest.spyOn(console, "info").mockImplementation(() => {});
+const info = jest.spyOn(console, 'info').mockImplementation(() => {})
 
 global.fetch = (i) =>
-  Promise.resolve({ json: () => Promise.resolve(["one", "two"]) });
+  Promise.resolve({ json: () => Promise.resolve(['one', 'two']) })
 
-let el = {};
+let el = {}
 
-document.getElementById = () => el;
+document.getElementById = () => el
 
-test("logs status to console and sets html", (done) => {
-  require("./index");
+test('logs status to console and sets html', (done) => {
+  require('./index')
 
   setTimeout(() => {
-    expect(info).toHaveBeenCalledWith("Project is working as expected...");
-    expect(el.innerHTML).toEqual("<p>one</p><br /><p>two</p>");
-    done();
-  }, 100);
-});
+    expect(info).toHaveBeenCalledWith('Project is working as expected...')
+    expect(el.innerHTML).toEqual('<p>one</p><br /><p>two</p>')
+    done()
+  }, 100)
+})

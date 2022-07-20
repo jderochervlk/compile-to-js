@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDom from "react-dom";
+import React from 'react'
+import ReactDom from 'react-dom'
 
-let Greet = () => <h1>Hello, world!</h1>;
+let Greet = () => <h1>Hello, world!</h1>
 
-ReactDom.render(<Greet />, document.getElementById("root"));
+ReactDom.render(<Greet />, document.getElementById('root'))
 
 /***
  *
