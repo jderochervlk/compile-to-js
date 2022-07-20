@@ -2,7 +2,10 @@
   "name": "react-fp-ts",
   "packageManager": "yarn@3.2.1",
   "scripts": {
-    "develop": "yarn parcel src/index.html"
+    "develop": "yarn parcel src/index.html",
+    "build": "yarn parcel build src/index.html --public-url /react-fp-ts",
+    "react:build": "yarn build",
+    "react:develop": "yarn develop"
   },
   "dependencies": {
     "@types/react": "^18.0.15",
