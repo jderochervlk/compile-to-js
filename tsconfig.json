@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "jsx": "react",
+    "strict": true
+  }
+}

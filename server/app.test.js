@@ -30,6 +30,16 @@ test('get /plain-js/index.js', done => {
         })
 })
 
+test('get /react-fp-ts/ returns html', done => {
+    request(app)
+        .get('/react-fp-ts/')
+        .then(res => {
+            expect(res.statusCode).toBe(200)
+            expect(res.text).toContain("!DOCTYPE")
+            done()
+        })
+})
+
 test('404', done => {
     request(app)
         .get('/not-a-page')
