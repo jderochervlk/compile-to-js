@@ -1,13 +1,13 @@
-import React from 'react'
 import ReactDom from 'react-dom'
+import Content from './components/Content'
+import Intro from './components/Intro'
 import Layout from './components/Layout'
 
-ReactDom.render(<Layout />, document.getElementById('root'))
+const App = () => (
+  <Layout>
+    <Intro />
+    <Content />
+  </Layout>
+)
 
-/***
- *
- *
- * TODO: get a build tool set up
- *
- *
- */
+ReactDom.render(<App />, document.getElementById('root'))

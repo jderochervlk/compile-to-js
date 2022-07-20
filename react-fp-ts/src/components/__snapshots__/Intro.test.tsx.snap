@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Intro contains the expected text 1`] = `
+<div>
+  <h1
+    class="text-4xl"
+  >
+    React and fp-ts
+  </h1>
+  <p
+    class="mt-2"
+  >
+    A basic application written with React, TypeScript, and fp-ts.
+  </p>
+</div>
+`;

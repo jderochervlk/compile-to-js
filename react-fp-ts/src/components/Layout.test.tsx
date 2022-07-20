@@ -15,3 +15,15 @@ test('Layout can render with children', () => {
   expect(container).toMatchSnapshot()
   expect(getByText('Hello!')).toBeTruthy()
 })
+
+test('Layout can render with multiple children', () => {
+  const { container, getByText } = render(
+    <Layout>
+      <p>Hello!</p>
+      <p>More text!</p>
+    </Layout>
+  )
+  expect(container).toMatchSnapshot()
+  expect(getByText('Hello!')).toBeTruthy()
+  expect(getByText('More text!')).toBeTruthy()
+})

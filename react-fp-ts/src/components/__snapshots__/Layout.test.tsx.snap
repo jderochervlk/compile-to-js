@@ -12,6 +12,21 @@ exports[`Layout can render with children 1`] = `
 </div>
 `;
 
+exports[`Layout can render with multiple children 1`] = `
+<div>
+  <section
+    class="container mx-auto p-4 bg-white h-screen"
+  >
+    <p>
+      Hello!
+    </p>
+    <p>
+      More text!
+    </p>
+  </section>
+</div>
+`;
+
 exports[`Layout can render without children 1`] = `
 <div>
   <section

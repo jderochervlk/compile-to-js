@@ -8,6 +8,8 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['./setupTests.js'],
+  transformIgnorePatterns: ['node-fetch'],
   transform: {
     '^.+\\.(t|j)sx?$': [
       '@swc/jest',

@@ -13,6 +13,8 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.12",
+    "fp-ts": "^2.12.1",
+    "node-fetch": "^3.2.9",
     "parcel": "^2.6.2",
     "postcss": "^8.4.14",
     "react": "^18.2.0",

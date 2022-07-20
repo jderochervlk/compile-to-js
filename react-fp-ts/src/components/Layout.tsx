@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
 type Props = {
-  children?: ReactElement
+  children?: ReactElement | ReactElement[]
 }
 
 const Layout = ({ children }: Props) => (
