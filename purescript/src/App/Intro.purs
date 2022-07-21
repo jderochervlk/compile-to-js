@@ -1,44 +1,35 @@
 module App.Intro where
 
 import Prelude
+
+import Halogen (Component)
 import Halogen as H
+import Halogen.HTML (HTML)
 import Halogen.HTML as HH
-import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
 
-type State
-  = { count :: Int }
-
-data Action
-  = Increment
-
+component ∷ ∀ (output44 ∷ Type) (m45 ∷ Type -> Type) (t58 ∷ Type -> Type) (t61 ∷ Type). Component t58 t61 output44 m45
 component =
   H.mkComponent
-    { initialState: \_ -> { count: 0 }
+    { initialState: \_ -> {  }
     , render
-    , eval: H.mkEval H.defaultEval { handleAction = handleAction }
+    , eval: H.mkEval H.defaultEval 
     }
 
-render :: forall cs m. State -> H.ComponentHTML Action cs m
-render state =
+render ∷ ∀ (t6 ∷ Type) (w7 ∷ Type) (i8 ∷ Type). t6 → HTML w7 i8
+render __ =
   HH.div [
     HP.classes [ 
         HH.ClassName "container"
       , HH.ClassName "mx-auto"
       , HH.ClassName "p-4"
       , HH.ClassName "bg-white"
-      , HH.ClassName "h-screen" ]]
+      , HH.ClassName "h-screen" ]
+      ]
     [ HH.h1
         [ HP.classes [ HH.ClassName "text-4xl" ]]
         [ HH.text $ "PureScript and Halogen" ]
+      , HH.p
+        [ HP.classes [ HH.ClassName "mt-2" ]]
+        [ HH.text $ " A basic application written with PureScript and Halogen." ]
     ]
-    ,    [ HH.h1
-        [ HP.classes [ HH.ClassName "text-4xl" ]]
-        [ HH.text $ "PureScript and Halogen" ]
-    ]
-
-
-
-
-handleAction = case _ of
-  Increment -> H.modify_ \st -> st { count = st.count + 1 }
