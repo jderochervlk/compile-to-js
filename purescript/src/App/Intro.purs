@@ -2,23 +2,26 @@ module App.Intro where
 
 import Prelude
 
-import Halogen (Component)
+
 import Halogen as H
-import Halogen.HTML (HTML)
 import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP
 
-component ∷ ∀ (output44 ∷ Type) (m45 ∷ Type -> Type) (t58 ∷ Type -> Type) (t61 ∷ Type). Component t58 t61 output44 m45
+type State = Unit
+
+initialState :: forall input. input -> State
+initialState _ = unit
+
+component :: forall query input output m. H.Component query input output m
 component =
   H.mkComponent
-    { initialState: \_ -> {  }
+    { initialState
     , render
     , eval: H.mkEval H.defaultEval 
     }
 
-render ∷ ∀ (t6 ∷ Type) (w7 ∷ Type) (i8 ∷ Type). t6 → HTML w7 i8
-render __ =
-  HH.div [
+header :: forall w i. HH.HTML w i
+header = HH.div [
     HP.classes [ 
         HH.ClassName "container"
       , HH.ClassName "mx-auto"
@@ -33,3 +36,7 @@ render __ =
         [ HP.classes [ HH.ClassName "mt-2" ]]
         [ HH.text $ " A basic application written with PureScript and Halogen." ]
     ]
+    
+
+render :: forall w i. State -> HH.HTML w i
+render __ = header
