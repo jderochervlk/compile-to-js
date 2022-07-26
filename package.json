@@ -43,7 +43,8 @@
     "node": "16.x"
   },
   "workspaces": [
-    "./react-fp-ts"
+    "./react-fp-ts",
+    "./purescript"
   ],
   "devDependencies": {
     "@types/babel__preset-env": "^7",

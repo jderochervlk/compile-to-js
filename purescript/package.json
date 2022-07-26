@@ -1,4 +1,10 @@
 {
   "name": "purescript",
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.1",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  },
+  "scripts": {
+    "develop": "parcel index.html"
+  }
 }

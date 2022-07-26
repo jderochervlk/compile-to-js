@@ -31,7 +31,7 @@ header = HH.div [
       ]
     [ HH.h1
         [ HP.classes [ HH.ClassName "text-4xl" ]]
-        [ HH.text $ "PureScript and Halogen" ]
+        [ HH.text $ "PureScript and Halogen?!?!?!?!" ]
       , HH.p
         [ HP.classes [ HH.ClassName "mt-2" ]]
         [ HH.text $ " A basic application written with PureScript and Halogen." ]

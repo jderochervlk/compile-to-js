@@ -21,6 +21,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."\
       },\
       {\
+        "name": "purescript",\
+        "reference": "workspace:purescript"\
+      },\
+      {\
         "name": "react-fp-ts",\
         "reference": "workspace:react-fp-ts"\
       }\
@@ -29,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["compile-to-js", ["workspace:."]],\
+      ["purescript", ["workspace:purescript"]],\
       ["react-fp-ts", ["workspace:react-fp-ts"]]\
     ],\
     "fallbackPool": [\
@@ -10165,6 +10170,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["punycode", "npm:2.1.1"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["purescript", [\
+        ["workspace:purescript", {\
+          "packageLocation": "./purescript/",\
+          "packageDependencies": [\
+            ["purescript", "workspace:purescript"],\
+            ["parcel", "npm:2.6.2"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["qs", [\
