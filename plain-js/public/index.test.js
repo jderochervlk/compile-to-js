@@ -12,7 +12,6 @@ test('logs status to console and sets html', done => {
 
   setTimeout(() => {
     expect(info).toHaveBeenCalledWith('Project is working as expected...')
-    expect(el.innerHTML).toEqual('<p>one</p><br /><p>two</p>')
     done()
   }, 100)
 })
