@@ -1,11 +1,8 @@
 {
   "name": "react-fp-ts",
-  "packageManager": "yarn@3.2.1",
   "scripts": {
-    "develop": "yarn parcel src/index.html",
-    "build": "yarn parcel build src/index.html --public-url /react-fp-ts",
-    "react:build": "yarn build",
-    "react:develop": "yarn develop"
+    "develop": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /react-fp-ts"
   },
   "dependencies": {
     "@testing-library/react": "^13.3.0",
