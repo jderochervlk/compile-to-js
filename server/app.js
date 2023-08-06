@@ -19,6 +19,11 @@ app.use(
   express.static(path.join(__dirname, '../react-fp-ts/dist/'))
 )
 
+app.use(
+  '/purescript/',
+  express.static(path.join(__dirname, '../purescript/dist/'))
+)
+
 app.use((req, res, next) => {
   res.status(404).send("Sorry, can't find that!")
 })

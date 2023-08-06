@@ -12,21 +12,11 @@ to generate this file without the comments in this block.
 -}
 { name = "my-project"
 , dependencies =
-  [ "aff"
-  , "affjax"
-  , "affjax-web"
-  , "argonaut-core"
-  , "arrays"
-  , "console"
+  [ "console"
   , "effect"
-  , "either"
   , "halogen"
-  , "halogen-subscriptions"
-  , "http-methods"
   , "maybe"
   , "prelude"
-  , "web-fetch"
-  , "web-html"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]

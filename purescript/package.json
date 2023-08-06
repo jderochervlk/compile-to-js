@@ -5,6 +5,7 @@
     "parcel": "^2.6.2"
   },
   "scripts": {
-    "develop": "parcel index.html"
+    "develop": "parcel index.html",
+    "build": "npx spago build && parcel build index.html --public-url /purescript"
   }
 }

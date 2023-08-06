@@ -8,7 +8,9 @@
   "scripts": {
     "develop": "npx nodemon",
     "start": "node server/index.js",
-    "build": "npm install && npm run build --workspace=react-fp-ts",
+    "build": "npm run build:fp-ts && npm run build:purescript",
+    "build:fp-ts": "npm run build --workspace=react-fp-ts",
+    "build:purescript": "npm run build --workspace=purescript",
     "test": "jest -i",
     "test:watch": "jest -i --watch",
     "format": "npx prettier --write .",
