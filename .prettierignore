@@ -7,3 +7,4 @@ dist
 .pnp*
 .spago
 output
+.psci_modules
