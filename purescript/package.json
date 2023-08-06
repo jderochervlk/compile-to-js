@@ -9,6 +9,7 @@
     "build": "npx spago build && parcel build index.html --public-url /purescript"
   },
   "dependencies": {
+    "purescript": "*",
     "tailwindcss": "^3.3.3"
   }
 }
