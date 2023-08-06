@@ -12,3 +12,4 @@ dist
 .parcel-cache
 .spago
 output
+lib
