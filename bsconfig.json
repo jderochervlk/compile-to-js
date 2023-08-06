@@ -2,7 +2,7 @@
   "name": "compile-to-js",
   "sources": [
     {
-      "dir": "src",
+      "dir": "site/src",
       "subdirs": true
     }
   ],
@@ -13,5 +13,7 @@
     }
   ],
   "suffix": ".mjs",
-  "bs-dependencies": []
+  "jsx": { "version": 4, "mode": "classic" },
+  "bs-dependencies": ["@rescript/core", "@rescript/react"],
+  "bsc-flags": ["-open RescriptCore"]
 }

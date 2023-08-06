@@ -13,3 +13,5 @@ dist
 .spago
 output
 lib
+site/src/public
+public
