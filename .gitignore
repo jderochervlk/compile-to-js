@@ -15,4 +15,3 @@ output
 lib
 site/src/public
 public
-!./public/_redirects
