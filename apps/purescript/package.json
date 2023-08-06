@@ -6,8 +6,8 @@
     "spago": "^0.21.0"
   },
   "scripts": {
-    "develop": "parcel index.html",
-    "build": "npm exec spago build && parcel build index.html --public-url /purescript --dist-dir=../public/purescript"
+    "develop": "parcel purescript.html",
+    "build": "npm exec spago build && parcel build purescript.html --public-url /purescript --dist-dir=../public/"
   },
   "dependencies": {
     "purescript": "*",
