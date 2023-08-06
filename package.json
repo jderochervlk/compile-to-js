@@ -42,8 +42,7 @@
     "typescript": "^4.7.4"
   },
   "workspaces": [
-    "./react-fp-ts",
-    "./purescript"
+    "./apps/**"
   ],
   "devDependencies": {
     "@types/babel__preset-env": "^7",
