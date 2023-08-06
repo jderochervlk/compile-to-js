@@ -38,7 +38,7 @@ function App(props) {
       React.createElement(
         'a',
         {
-          href: './public/purescript/index.html',
+          href: '/purescript/index.html',
         },
         text.js
       )

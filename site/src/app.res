@@ -11,7 +11,7 @@ let make = () => {
       className="max-w-xl rounded overflow-hidden shadow-lg m-auto bg-slate-50 text-slate-800 p-4">
       <h1 className="text-2xl mb-7"> {text["header"]->React.string} </h1>
       <p className="mb-3"> {text["intro"]->React.string} </p>
-      <a href="./public/purescript/index.html"> {text["js"]->React.string} </a>
+      <a href="/purescript/index.html"> {text["js"]->React.string} </a>
     </div>
   </div>
 }
