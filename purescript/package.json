@@ -2,11 +2,12 @@
   "name": "purescript",
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
-    "parcel": "^2.9.3"
+    "parcel": "^2.9.3",
+    "spago": "^0.21.0"
   },
   "scripts": {
     "develop": "parcel index.html",
-    "build": "npx spago build && parcel build index.html --public-url /purescript"
+    "build": "npm exec spago build && parcel build index.html --public-url /purescript"
   },
   "dependencies": {
     "purescript": "*",
