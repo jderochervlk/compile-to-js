@@ -10,42 +10,24 @@ module App.Content
 
 import Prelude
 
-import Affjax as AX
-import Affjax.ResponseFormat (json)
-import Affjax.Web (driver)
-import Data.Argonaut.Core as J
-import Data.Either (Either(..))
 import Data.Maybe (Maybe(..))
-import Data.MediaType.Common (applicationJavascript)
-import Effect (Effect)
-import Effect.Aff (Aff, launchAff)
-import Effect.Class (class MonadEffect)
-import Effect.Class.Console (log)
-import Halogen (HalogenQ(..))
 import Halogen as H
-import Halogen.Aff.Driver.Eval (evalF)
-import Halogen.HTML (a)
 import Halogen.HTML as HH
-import Halogen.HTML.Properties (action)
 import Halogen.HTML.Properties as HP
 
+type State = Maybe Unit
 
-type State = { value :: Array String }
 
-
-initialState :: String -> State
-initialState a = { value: [] }
-
-data Action = Init
+initialState :: Unit -> State
+initialState _ = Nothing
 
 -- component :: forall query input output m. MonadEffect m => H.Component query input output m
+component :: forall a b c. H.Component c Unit a b
 component =
   H.mkComponent
     { initialState
     , render
     , eval: H.mkEval $ H.defaultEval
-    { handleAction = handleAction 
-    }
     }
 
 header :: forall w i. HH.HTML w i
@@ -59,29 +41,31 @@ header = HH.div [
       ]
     [ HH.h1
         [ HP.classes [ HH.ClassName "text-4xl" ]]
-        [ HH.text $ "PureScript and Halogen?!?!?!?!" ]
+        [ HH.text $ "PureScript and Halogen" ]
       , HH.p
         [ HP.classes [ HH.ClassName "mt-2" ]]
-        [ HH.text $ " A basic application written with PureScript and Halogen." ]
-      , HH.div [] (map renderItem  ["foo", "bar"])
+        [ HH.text $ "A basic application written with PureScript and Halogen." ],
+        HH.a 
+          [ HP.href "https://www.purescript.org/"
+          , HP.classes [HH.ClassName "text-blue-500" ] 
+          ] [HH.text $ "PureScript"]
+      , HH.br []    
+      , HH.a
+          [ HP.href "https://purescript-halogen.github.io/purescript-halogen/"
+          , HP.classes [HH.ClassName "text-blue-500" ]
+          ]
+          [HH.text $ "Halogen - a front-end framework for PureScript"]
+      , HH.div [] (map renderItem text)
     ]
 
+text :: Array String
+text = [
+  "This page does not fetch any live data. I spent a few days on it and since PureScript is Haskell-ish doing Effects is complicated."
+  , "Overall, I can see and understand the power of PureScript, but it has a steep learning curve. It would probably be a good choice for a company that was already using Haskell on the backend."]
 
 renderItem ∷ forall w i. String -> HH.HTML w i
 renderItem a = HH.p [] [HH.text $ a]
 
--- render :: State -> H.ComponentHTML Query
 
+render ∷ Maybe Unit -> forall w i. HH.HTML w i
 render __ = header
-
--- eval :: Query ~> H.Component State Query Message Aff
-
--- handleAction :: forall output m. MonadEffect m => Action -> H.HalogenM State Action () output m Unit
--- handleAction :: Effect Unit
-handleAction = case _ of
-  Init -> do
-    result <- AX.get driver json "https://baconipsum.com/api/?type=meat-and-filler"
-    case result of
-      Left err -> log $ "GET /api response failed to decode: " <> AX.printError err
-      Right response -> do
-        log $ "GET /api response: " <> J.stringify response.body
