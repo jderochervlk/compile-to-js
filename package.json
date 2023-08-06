@@ -6,7 +6,7 @@
   "author": "Josh Derocher <josh@vlkpack.com>",
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:site && npm run build:fp-ts",
+    "build": "npm run build:site && npm run build:fp-ts && npm run build:purescript",
     "build:site": "npm run build --workspace=site",
     "build:fp-ts": "npm run build --workspace=react-fp-ts",
     "build:purescript": "npm i -g purescript && npm run build --workspace=purescript",
