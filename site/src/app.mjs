@@ -7,6 +7,8 @@ var text = {
   intro:
     'This is a little experiment to test out languages that compile down to JS.',
   js: 'Plain JavaScript',
+  purescript: 'PureScript with Halogen',
+  'fp-ts': 'React, TypeScript, and fp-ts',
 }
 
 function App(props) {
@@ -40,7 +42,14 @@ function App(props) {
         {
           href: '/purescript',
         },
-        text.js
+        text.purescript
+      ),
+      React.createElement(
+        'a',
+        {
+          href: '/react-fp-ts',
+        },
+        text['fp-ts']
       )
     )
   )
