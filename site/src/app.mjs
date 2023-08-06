@@ -21,7 +21,7 @@ function App(props) {
       'div',
       {
         className:
-          'max-w-xl rounded overflow-hidden shadow-lg m-auto bg-slate-50 text-slate-800 p-4',
+          'max-w-xl rounded overflow-hidden shadow-lg m-auto bg-slate-50 text-slate-800 p-8',
       },
       React.createElement(
         'h1',
@@ -30,26 +30,37 @@ function App(props) {
         },
         text.header
       ),
+      React.createElement('p', undefined, text.intro),
+      React.createElement('br', undefined),
       React.createElement(
-        'p',
+        'ul',
         {
-          className: 'mb-3',
+          className: 'list-disc list-inside',
         },
-        text.intro
-      ),
-      React.createElement(
-        'a',
-        {
-          href: '/purescript',
-        },
-        text.purescript
-      ),
-      React.createElement(
-        'a',
-        {
-          href: '/react-fp-ts',
-        },
-        text['fp-ts']
+        React.createElement(
+          'li',
+          undefined,
+          React.createElement(
+            'a',
+            {
+              className: 'text-blue-600 hover:text-blue-800 hover:underline',
+              href: '/react-fp-ts',
+            },
+            text['fp-ts']
+          )
+        ),
+        React.createElement(
+          'li',
+          undefined,
+          React.createElement(
+            'a',
+            {
+              className: 'text-blue-600 hover:text-blue-800 hover:underline',
+              href: '/purescript',
+            },
+            text.purescript
+          )
+        )
       )
     )
   )
