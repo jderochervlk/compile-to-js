@@ -12,3 +12,6 @@ dist
 .parcel-cache
 .spago
 output
+lib
+site/src/public
+public

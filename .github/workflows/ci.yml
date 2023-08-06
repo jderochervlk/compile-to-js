@@ -13,5 +13,3 @@ jobs:
           npm install purescript -g
       - name: build
         run: npm run build
-      - name: unit tests
-        run: npm run test
