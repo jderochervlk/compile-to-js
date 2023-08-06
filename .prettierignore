@@ -8,3 +8,4 @@ dist
 .spago
 output
 .psci_modules
+public
