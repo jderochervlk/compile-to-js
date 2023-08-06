@@ -10,3 +10,5 @@ coverage
 dist
 .vscode
 .parcel-cache
+.spago
+output

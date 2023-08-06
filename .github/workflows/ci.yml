@@ -7,7 +7,11 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: prepare
+      - name: install
+        run: |
+          npm install
+          npm install purescript -g
+      - name: build
         run: npm run build
       - name: unit tests
         run: npm run test
