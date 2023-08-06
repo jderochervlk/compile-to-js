@@ -2,7 +2,7 @@
   "name": "react-fp-ts",
   "scripts": {
     "develop": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /react-fp-ts --dist-folder=../public/react-fp-ts"
+    "build": "parcel build src/index.html --public-url /react-fp-ts --dist-dir=../public/react-fp-ts"
   },
   "dependencies": {
     "@testing-library/react": "^13.3.0",
