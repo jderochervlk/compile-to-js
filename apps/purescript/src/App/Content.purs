@@ -32,31 +32,30 @@ header :: forall w i. HH.HTML w i
 header =
   HH.div
     [ HP.classes
-        [ HH.ClassName "container"
-        , HH.ClassName "mx-auto"
-        , HH.ClassName "p-4"
-        , HH.ClassName "bg-white"
-        , HH.ClassName "h-screen"
+        [ HH.ClassName "flex h-screen"
         ]
     ]
-    [ HH.h1
-        [ HP.classes [ HH.ClassName "text-4xl" ] ]
-        [ HH.text $ "PureScript and Halogen" ]
-    , HH.p
-        [ HP.classes [ HH.ClassName "mt-2" ] ]
-        [ HH.text $ "A basic application written with PureScript and Halogen." ]
-    , HH.a
-        [ HP.href "https://www.purescript.org/"
-        , HP.classes [ HH.ClassName "text-blue-500" ]
+    [ HH.div [ HP.classes [ HH.ClassName "max-w-xl rounded overflow-hidden shadow-lg mx-auto mt-0 mb-auto sm:mt-10 md:mt-auto bg-slate-50 text-slate-800 p-8" ] ]
+        [ HH.h1
+            [ HP.classes [ HH.ClassName "text-4xl" ] ]
+            [ HH.text $ "PureScript and Halogen" ]
+        , HH.p
+            [ HP.classes [ HH.ClassName "mt-2" ] ]
+            [ HH.text $ "A basic application written with PureScript and Halogen." ]
+        , HH.br []
+        , HH.a
+            [ HP.href "https://www.purescript.org/"
+            , HP.classes [ HH.ClassName "text-blue-500 hover:text-blue-800 hover:underline" ]
+            ]
+            [ HH.text $ "PureScript" ]
+        , HH.br []
+        , HH.a
+            [ HP.href "https://purescript-halogen.github.io/purescript-halogen/"
+            , HP.classes [ HH.ClassName "text-blue-500 hover:text-blue-800 hover:underline" ]
+            ]
+            [ HH.text $ "Halogen - a front-end framework for PureScript" ]
+        , HH.div [ HP.classes [ HH.ClassName "mt-4" ] ] (map renderItem text)
         ]
-        [ HH.text $ "PureScript" ]
-    , HH.br []
-    , HH.a
-        [ HP.href "https://purescript-halogen.github.io/purescript-halogen/"
-        , HP.classes [ HH.ClassName "text-blue-500" ]
-        ]
-        [ HH.text $ "Halogen - a front-end framework for PureScript" ]
-    , HH.div [] (map renderItem text)
     ]
 
 text :: Array String

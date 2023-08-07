@@ -21,7 +21,7 @@ function App(props) {
       'div',
       {
         className:
-          'max-w-xl rounded overflow-hidden shadow-lg m-auto bg-slate-50 text-slate-800 p-8',
+          'max-w-xl rounded overflow-hidden shadow-lg mx-auto mt-0 mb-auto sm:mt-10 md:mt-auto bg-slate-50 text-slate-800 p-8',
       },
       React.createElement(
         'h1',
@@ -33,33 +33,27 @@ function App(props) {
       React.createElement('p', undefined, text.intro),
       React.createElement('br', undefined),
       React.createElement(
-        'ul',
+        'div',
         {
-          className: 'list-disc list-inside',
+          className: 'list-inside text-l flex flex-col',
         },
         React.createElement(
-          'li',
-          undefined,
-          React.createElement(
-            'a',
-            {
-              className: 'text-blue-600 hover:text-blue-800 hover:underline',
-              href: '/react-fp-ts',
-            },
-            text['fp-ts']
-          )
+          'button',
+          {
+            className:
+              'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800',
+            href: '/react-fp-ts',
+          },
+          text['fp-ts']
         ),
         React.createElement(
-          'li',
-          undefined,
-          React.createElement(
-            'a',
-            {
-              className: 'text-blue-600 hover:text-blue-800 hover:underline',
-              href: '/purescript',
-            },
-            text.purescript
-          )
+          'button',
+          {
+            className:
+              'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800',
+            href: '/purescript',
+          },
+          text.purescript
         )
       )
     )
