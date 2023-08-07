@@ -10,22 +10,22 @@ let text = {
 let make = () => {
   <div className="flex h-screen">
     <div
-      className="max-w-xl rounded overflow-hidden shadow-lg m-auto bg-slate-50 text-slate-800 p-8">
+      className="max-w-xl rounded overflow-hidden shadow-lg mx-auto mt-0 mb-auto sm:mt-10 md:mt-auto bg-slate-50 text-slate-800 p-8">
       <h1 className="text-2xl mb-7"> {text["header"]->React.string} </h1>
       <p> {text["intro"]->React.string} </p>
       <br />
-      <ul className="list-disc list-inside">
-        <li>
-          <a href="/react-fp-ts" className="text-blue-600 hover:text-blue-800 hover:underline">
-            {text["fp-ts"]->React.string}
-          </a>
-        </li>
-        <li>
-          <a href="/purescript" className="text-blue-600 hover:text-blue-800 hover:underline">
-            {text["purescript"]->React.string}
-          </a>
-        </li>
-      </ul>
+      <div className="list-inside text-l flex flex-col">
+        <button
+          href="/react-fp-ts"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+          {text["fp-ts"]->React.string}
+        </button>
+        <button
+          href="/purescript"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+          {text["purescript"]->React.string}
+        </button>
+      </div>
     </div>
   </div>
 }

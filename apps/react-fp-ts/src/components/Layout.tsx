@@ -5,8 +5,10 @@ type Props = {
 }
 
 const Layout = ({ children }: Props) => (
-  <section className="container mx-auto p-4 bg-white h-screen">
-    {children}
+  <section className="flex h-screen">
+    <div className="max-w-xl rounded overflow-hidden shadow-lg mx-auto mt-0 mb-auto sm:mt-10 md:mt-auto bg-slate-50 text-slate-800 p-8">
+      {children}
+    </div>
   </section>
 )
 

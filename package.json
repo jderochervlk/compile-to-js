@@ -32,5 +32,8 @@
   "workspaces": [
     "./apps/**",
     "./site"
-  ]
+  ],
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
 }

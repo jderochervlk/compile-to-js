@@ -9,6 +9,8 @@ const Content = () => {
     e => <p>There was an error: {e.message}</p>,
     items => (
       <div>
+        <p>All of the text below is fetched from a random text api.</p>
+        <br />
         {items.map((i, idx) => (
           <React.Fragment key={`content-${idx}`}>
             <p>{i}</p>
