@@ -15,4 +15,5 @@ output
 lib
 site/src/public
 public
+!public/plain-js
 .psc-ide-port
